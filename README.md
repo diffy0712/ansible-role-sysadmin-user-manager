@@ -53,8 +53,8 @@ Using [include_role](https://docs.ansible.com/ansible/latest/user_guide/playbook
       ansible.builtin.debug:
         msg: "this task runs before the example role"
 
-    - name: Include the example role
+    - name: Include sysadmin-user-manager role
       include_role:
-        name: example
+        name: diffy0712.sysadmin-user-manager
 
 ```
