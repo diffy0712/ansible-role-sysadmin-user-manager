@@ -36,6 +36,25 @@ No dependencies.
 Example Playbook
 ----------------
 
-    - hosts: all
-      roles:
-         - role: diffy0712.sysadmin-user-manager
+Using [roles](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html#using-roles)
+```
+---
+- hosts: all
+  roles:
+      - role: diffy0712.sysadmin-user-manager
+```
+
+Using [include_role](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html#including-roles-dynamic-reuse)
+```
+---
+- hosts: all
+  tasks:
+    - name: Print a message
+      ansible.builtin.debug:
+        msg: "this task runs before the example role"
+
+    - name: Include the example role
+      include_role:
+        name: example
+
+```
