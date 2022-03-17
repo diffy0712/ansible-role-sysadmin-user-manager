@@ -1,0 +1,14 @@
+galaxy_info:
+  author: diffy0712 <ferencz.david@protonmail.com>
+  description: Ansible Role to create a sysadmin (ansible user) for ansible playbooks to use.
+  issue_tracker_url: https://gitlab.com/diffy0712/ansible-server-manager-user/-/issues
+  license: license MIT
+  min_ansible_version: 2.1
+  platforms:
+  - name: Ubuntu
+    versions:
+    - all
+
+  galaxy_tags: ['sysadmin', 'user']
+
+dependencies: []
