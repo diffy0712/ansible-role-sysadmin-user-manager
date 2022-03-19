@@ -1,0 +1,15 @@
+---
+## @source https://stackoverflow.com/a/61563967
+- name: "Verify that required string variables are defined"
+  assert:
+    that:
+      - "{{ ahs_var }} is defined"
+      - "{{ ahs_var }} | length > 0"
+      - "{{ ahs_var }} != None"
+    fail_msg: "{{ ahs_var }} needs to be set for the role to work"
+    success_msg: "Required variable {{ ahs_var }} is defined"
+  loop_control:
+    loop_var: ahs_var
+  with_items:
+    - sysadmin_password
+    - sysadmin_keys
