@@ -3,6 +3,11 @@ Ansible Server Manager User Role
 
 A really simple ansible role to create the first user on the remote system for accessing via ansible.
 
+Intent
+------
+When working with ansible-playbooks, I usually access the server's via a custom `ansible` user. This user is only used by ansible. 
+Other users of the system get their own users. For better logging and management of users.
+
 Requirements
 ------------
 
