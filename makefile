@@ -11,3 +11,7 @@ lintf: ## Run yamllint and ansible-lint on a path
 .PHONY: lintw
 lintw: ## Start watching for file changes and lint them.
 	onchange './**/*.yml' -e ./travis.yml -- make lintf f='./{{file}}'
+
+.PHONY: test
+test: ## Run molecule tests
+	molecule test
