@@ -1,0 +1,17 @@
+---
+- name: "Add a new user named {{ sysadmin_user }}"
+  user:
+    name: "{{ sysadmin_user }}"
+    shell: /bin/bash
+    password: "{{ sysadmin_password }}"
+- name: Add '{{ sysadmin_user }}' to the sudoers
+  copy:
+    dest: "/etc/sudoers.d/{{ sysadmin_user }}"
+    content: "{{ sysadmin_user }}  ALL=(ALL)  NOPASSWD: ALL"
+    mode: 0644
+- name: Set up multiple authorized keys
+  authorized_key:
+    user: "{{ sysadmin_user }}"
+    state: present
+    key: '{{ item }}'
+  with_items: '{{ sysadmin_keys }}'
