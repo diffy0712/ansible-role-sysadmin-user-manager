@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   role_name: sysadmin_user_manager
-  author: diffy0712 <ferencz.david@protonmail.com>
+  author: "@diffy0712"
   description: Ansible Role to create a sysadmin (ansible user) for ansible playbooks to use.
   issue_tracker_url: https://gitlab.com/diffy0712/ansible-server-manager-user/-/issues
   license: license MIT
