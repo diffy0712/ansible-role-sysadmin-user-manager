@@ -18,17 +18,17 @@ Role Variables
 
 Available variables are listed below, along with default values (see defaults/main.yml):
 ```
-sysuser_name: sysadmin
+sysadmin_user: sysadmin
 ```
 The user's name
 
 ```
-sysuser_password: astrongpasswordfromavaultfile
+sysadmin_password: astrongpasswordfromavaultfile
 ```
 The user's password
 
 ```
-sysuser_keys:
+sysadmin_keys:
   - somekey
 ```
 An array of public keys the user should have authorized.
