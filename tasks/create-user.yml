@@ -16,4 +16,5 @@
     user: "{{ sysadmin_user }}"
     state: present
     key: '{{ item }}'
+    path: ~/.ssh/authorized_keys
   with_items: '{{ sysadmin_keys }}'
