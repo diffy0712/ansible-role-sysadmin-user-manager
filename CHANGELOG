@@ -5,3 +5,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+ - Add option to copy files for users. sysadmin_file: [{path: '', destination_path: ''}].
+ - Run test in pipeline for multiple os using variable `MOLECULE_DISTRO`
+ - Add option to toggle sudoer
+
+## [1.0.0] 2022-
+### Added
+ - Create a sysadmin user
+ - Copy public authorized keys
+ - Add as sudoer
+ - Tests (molecule)
+ - Documentation
+ - Initial files
