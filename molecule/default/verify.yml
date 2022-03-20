@@ -13,7 +13,6 @@
     register: getent_user
 
   - assert:
-      name: Ensure getent for user is correct
       that: 
         - getent_user.ansible_facts.getent_passwd[sysadmin_user] is defined
         - getent_user.ansible_facts.getent_passwd[sysadmin_user][0] == 'x'
