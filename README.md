@@ -1,19 +1,29 @@
-Ansible Server Manager User Role
+# Ansible Server Manager User Role
 =========
 
+- [# Ansible Server Manager User Role](#-ansible-server-manager-user-role)
+  - [## Introduction](#-introduction)
+  - [## Intent](#-intent)
+  - [## Requirements](#-requirements)
+  - [## Role Variables](#-role-variables)
+  - [## Dependencies](#-dependencies)
+  - [## Example Playbook](#-example-playbook)
+
+## Introduction
+------------
 A really simple ansible role to create the first user on the remote system for accessing via ansible.
 
-Intent
+## Intent
 ------
 When working with ansible-playbooks, I usually access the server's via a custom `ansible` user. This user is only used by ansible. 
 Other users of the system get their own users. For better logging and management of users.
 
-Requirements
+## Requirements
 ------------
 
 A fress system. No other requirements.
 
-Role Variables
+## Role Variables
 --------------
 
 Available variables are listed below, along with default values (see defaults/main.yml):
@@ -33,12 +43,12 @@ sysadmin_keys:
 ```
 An array of public keys the user should have authorized.
 
-Dependencies
+## Dependencies
 ------------
 
 No dependencies.
 
-Example Playbook
+## Example Playbook
 ----------------
 
 Using [roles](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html#using-roles)
