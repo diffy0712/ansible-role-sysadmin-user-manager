@@ -25,3 +25,12 @@
     key: '{{ item }}'
     path: ~/.ssh/authorized_keys
   with_items: '{{ sysadmin_keys }}'
+
+- name: Copy files using variable `sysadmin_files`
+  copy:
+    src: '{{ item.file }}'
+    dest: '{{ item.dest }}'
+    owner: '{{ sysadmin_user }}'
+    group: '{{ sysadmin_user }}'
+    mode: '0644'
+  with_items: '{{ sysadmin_files }}'

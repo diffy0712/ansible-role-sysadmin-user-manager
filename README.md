@@ -30,6 +30,7 @@ Available variables are listed below, along with default values (see defaults/ma
 | __sysadmin_password__      | The user's password       |  astrongpasswordfromavaultfile |
 | __sysadmin_keys__      | An array of public keys the user should have authorized.       | ```[somekey, otherkey]``` |
 | __sysadmin_issudoer__      | Add user as sudoer      | yes |
+| __sysadmin_files__      | List of files or directory to copy to remote for the user. eg: dotfiles      | ```{file: ./files/.bashrc, dest: /home/ansible/.bashrc}[]``` |
 
 ## Dependencies
 
