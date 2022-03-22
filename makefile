@@ -15,3 +15,11 @@ lintw: ## Start watching for file changes and lint them.
 .PHONY: test
 test: ## Run molecule tests
 	molecule test
+
+.PHONY: hooks
+hooks: ## Copy git hooks (might need sudo to copy to .git/hooks)
+	npm install -g @commitlint/{config-conventional,cli}
+	cp bin/hooks/commit-msg.sh .git/hooks/commit-msg
+	chmod +x .git/hooks/commit-msg
+
+ 

@@ -38,6 +38,9 @@ We follow the [conventional commits specification](https://www.conventionalcommi
 
 Our pre-commit hooks verify that your commit message matches this format when committing.
 
+#### Hooks
+Run the `make hooks` command to make sure they are in place.
+
 ### Sending a pull request etc...
 
 > TODO
