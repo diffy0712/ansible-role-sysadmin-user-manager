@@ -1,5 +1,4 @@
 ---
-## @source https://molecule.readthedocs.io/en/latest/ci.html#gitlab-ci
 image: docker:stable-dind
 
 services:
@@ -16,9 +15,5 @@ before_script:
   - ansible --version
   - molecule --version
 
-molecule:
-  stage: test
-  script:
-    - make test
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+include:
+  - local: '.gitlab-ci.test.yml'
