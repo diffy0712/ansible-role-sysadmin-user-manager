@@ -1,3 +1,4 @@
 ---
 sysadmin_user: ansible
 sysadmin_shell: '/bin/bash'
+sysadmin_issudoer: yes

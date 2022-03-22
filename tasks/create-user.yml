@@ -10,6 +10,13 @@
     dest: "/etc/sudoers.d/{{ sysadmin_user }}"
     content: "{{ sysadmin_user }}  ALL=(ALL)  NOPASSWD: ALL"
     mode: 0644
+  when: sysadmin_issudoer
+
+- name: Remove '{{ sysadmin_user }}' from sudoers
+  file:
+    path: "/etc/sudoers.d/{{ sysadmin_user }}"
+    state: absent
+  when: not sysadmin_issudoer
 
 - name: Set up multiple authorized keys
   authorized_key:

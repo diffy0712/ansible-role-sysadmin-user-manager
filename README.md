@@ -1,4 +1,5 @@
 # Ansible Server Manager User Role
+![ansible badge](https://img.shields.io/badge/Ansible-000000?style=for-the-badge&logo=ansible&logoColor=white)
 
 - [Ansible Server Manager User Role](#ansible-server-manager-user-role)
   - [Introduction](#introduction)
@@ -9,11 +10,11 @@
   - [Example Playbook](#example-playbook)
 
 ## Introduction
-A really simple ansible role to create the first user on the remote system for accessing via ansible.
+A really simple ansible role to create sysadmin user on the remote system for accessing via ansible.
 
 ## Intent
-When working with ansible-playbooks, I usually access the server's via a custom `ansible` user. This user is only used by ansible. 
-Other users of the system get their own users. For better logging and management of users.
+When working with ansible-playbooks, I usually access the server's via a custom `ansible` user. This user is only used by ansible.   
+Other users of the system get their own users. This ensures better logging and user management.
 
 ## Requirements
 
@@ -22,21 +23,13 @@ A fress system. No other requirements.
 ## Role Variables
 
 Available variables are listed below, along with default values (see defaults/main.yml):
-```
-sysadmin_user: sysadmin
-```
-The user's name
 
-```
-sysadmin_password: astrongpasswordfromavaultfile
-```
-The user's password
-
-```
-sysadmin_keys:
-  - somekey
-```
-An array of public keys the user should have authorized.
+| Variable (default value)      | Description | Default Value |
+| ----------- | ----------- | ----------- |
+| __sysadmin_user__      | The user's name       | sysadmin |
+| __sysadmin_password__      | The user's password       |  astrongpasswordfromavaultfile |
+| __sysadmin_keys__      | An array of public keys the user should have authorized.       | ```[somekey, otherkey]``` |
+| __sysadmin_issudoer__      | Add user as sudoer      | yes |
 
 ## Dependencies
 
