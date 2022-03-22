@@ -1,5 +1,4 @@
-## @source https://molecule.readthedocs.io/en/latest/ci.html#gitlab-ci
-molecule:
+test:
   stage: test
   script:
     - make test
