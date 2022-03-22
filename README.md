@@ -1,5 +1,5 @@
 # Ansible Server Manager User Role
-![ansible badge](https://img.shields.io/badge/Ansible-000000?style=for-the-badge&logo=ansible&logoColor=white)
+[![pipeline status](https://gitlab.com/diffy0712/ansible-sysadmin-user-manager/badges/main/pipeline.svg)](https://gitlab.com/diffy0712/ansible-sysadmin-user-manager/-/commits/main)
 
 - [Ansible Server Manager User Role](#ansible-server-manager-user-role)
   - [Introduction](#introduction)
