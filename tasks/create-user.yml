@@ -1,25 +1,25 @@
 ---
 - name: "Add a new user named {{ sysadmin_user }}"
-  user:
+  ansible.builtin.user:
     name: "{{ sysadmin_user }}"
     shell: "{{ sysadmin_shell }}"
     password: "{{ sysadmin_password }}"
 
 - name: Add '{{ sysadmin_user }}' to the sudoers
-  copy:
+  ansible.builtin.copy:
     dest: "/etc/sudoers.d/{{ sysadmin_user }}"
     content: "{{ sysadmin_user }}  ALL=(ALL)  NOPASSWD: ALL"
     mode: 0644
   when: sysadmin_issudoer
 
 - name: Remove '{{ sysadmin_user }}' from sudoers
-  file:
+  ansible.builtin.file:
     path: "/etc/sudoers.d/{{ sysadmin_user }}"
     state: absent
   when: not sysadmin_issudoer
 
 - name: Set up multiple authorized keys
-  authorized_key:
+  ansible.posix.authorized_key:
     user: "{{ sysadmin_user }}"
     state: present
     key: '{{ item }}'
@@ -27,7 +27,7 @@
   with_items: '{{ sysadmin_keys }}'
 
 - name: Copy files using variable `sysadmin_files`
-  copy:
+  ansible.builtin.copy:
     src: '{{ item.file }}'
     dest: '{{ item.dest }}'
     owner: '{{ sysadmin_user }}'

@@ -2,7 +2,7 @@
 ## Validate if required variables are defined
 ## @source https://stackoverflow.com/a/61563967
 - name: "Verify that required string variables are defined"
-  assert:
+  ansible.builtin.assert:
     that:
       - "{{ ahs_var }} is defined"
       - "{{ ahs_var }} | length > 0"
