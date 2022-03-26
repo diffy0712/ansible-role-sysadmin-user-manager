@@ -31,6 +31,15 @@ None.
 Install the role using ansible-galaxy:  
 `ansible-galaxy install diffy0712.sysadmin_user_manager`
 
+Add to `requirements.yml`:  
+```
+---
+roles:
+  - 'diffy0712.sysadmin_user_manager'
+```
+Then run `ansible-galaxy install -r requirements.yml -p roles`  
+
+
 Or clone this repository:  
 `git@github.com:diffy0712/ansible-role-sysadmin-user-manager.git`
 
