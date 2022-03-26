@@ -68,6 +68,10 @@ Using [roles](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse
 ```
 ---
 - hosts: all
+  vars:
+    - sysadmin_password: example
+    - sysadmin_keys: 
+        - yourpublickey
   roles:
       - role: diffy0712.sysadmin-user-manager
 ```
@@ -76,6 +80,10 @@ Using [include_role](https://docs.ansible.com/ansible/latest/user_guide/playbook
 ```
 ---
 - hosts: all
+  vars:
+    - sysadmin_password: example
+    - sysadmin_keys: 
+        - yourpublickey
   tasks:
     - name: Print a message
       ansible.builtin.debug:
