@@ -1,5 +1,4 @@
 # Ansible Server Manager User Role
-[![pipeline status](https://gitlab.com/diffy0712/ansible-sysadmin-user-manager/badges/main/pipeline.svg?ignore_skipped=true)](https://gitlab.com/diffy0712/ansible-sysadmin-user-manager/-/commits/main)
 
 - [Ansible Server Manager User Role](#ansible-server-manager-user-role)
   - [Introduction](#introduction)
