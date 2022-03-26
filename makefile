@@ -13,8 +13,18 @@ lintw: ## Start watching for file changes and lint them.
 	onchange './**/*.yml' -e ./gitlab-ci.yml -- make lintf f='./{{file}}'
 
 .PHONY: test
-test: ## Run molecule tests
+test: ## Run molecule tests on default platform
 	molecule test
+
+.PHONY: testall
+testall: ## Run test on multiple platforms
+	MOLECULE_DISTRO=rockylinux8 molecule test
+	MOLECULE_DISTRO=fedora33 molecule test
+	MOLECULE_DISTRO=ubuntu2004 molecule test
+	MOLECULE_DISTRO=ubuntu1804 molecule test
+	MOLECULE_DISTRO=debian11 molecule test
+	MOLECULE_DISTRO=debian10 molecule test
+	MOLECULE_DISTRO=centos7 molecule test
 
 .PHONY: hooks
 hooks: ## Copy git hooks (might need sudo to copy to .git/hooks)
