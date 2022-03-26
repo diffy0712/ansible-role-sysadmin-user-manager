@@ -1,8 +1,0 @@
----
-image: registry.gitlab.com/diffy0712/ansible-gitlabci-image
-
-services:
-  - docker:dind
-
-include:
-  - local: '.gitlab-ci.test.yml'
