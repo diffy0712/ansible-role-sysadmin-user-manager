@@ -8,6 +8,7 @@ name: CI
   schedule:
     - cron: "0 7 * * 1"
 
+
 jobs:
   lint:
     name: Lint
@@ -22,8 +23,7 @@ jobs:
           python-version: '3.x'
 
       - name: Install test dependencies.
-        run: pip3 install yamllint
+        run: pip3 install yamllint ansible-lint
 
       - name: Lint code.
-        run: |
-          yamllint .
+        run: make lint
