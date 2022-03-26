@@ -1,3 +1,5 @@
 skip_list:
   - 'yaml'
   - 'role-name'
+warn-list:
+  - fqcn-builtins
