@@ -8,7 +8,6 @@ name: CI
   schedule:
     - cron: "0 7 * * 1"
 
-
 jobs:
   lint:
     name: Lint
@@ -27,3 +26,36 @@ jobs:
 
       - name: Lint code.
         run: make lint
+
+  molecule:
+    name: Molecule
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - distro: rockylinux8
+          - distro: ubuntu2004
+          - distro: ubuntu1804
+          - distro: debian9
+          - distro: debian10
+          - distro: centos7
+
+    steps:
+      - name: Check out the codebase.
+        uses: actions/checkout@v2
+
+      - name: Set up Python 3.
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install test dependencies.
+        run: pip3 install ansible molecule[docker] docker
+
+      - name: Run Molecule tests.
+        run: molecule test
+        env:
+          PY_COLORS: '1'
+          ANSIBLE_FORCE_COLOR: '1'
+          MOLECULE_DISTRO: ${{ matrix.distro }}
+          MOLECULE_PLAYBOOK: ${{ matrix.playbook }}
