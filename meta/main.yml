@@ -7,9 +7,21 @@ galaxy_info:
   license: license MIT
   min_ansible_version: "2.1"
   platforms:
-    - name: Ubuntu
+    - name: EL
+      versions:
+        - 7
+        - 8
+    - name: Fedora
       versions:
         - all
+    - name: Debian
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - trusty
+        - xenial
+        - bionic
 
   galaxy_tags: ['sysadmin', 'user']
 
