@@ -28,9 +28,9 @@ None.
 ## Getting Started
 
 ### Install in playbook
-Install the role using ansible-galaxy:  
+ - __Using global ansible galaxy:__
 `ansible-galaxy install diffy0712.sysadmin_user_manager`
-
+ - __Using ansible galaxy requirements.yml:__
 Add to `requirements.yml`:  
 ```
 ---
@@ -38,10 +38,8 @@ roles:
   - 'diffy0712.sysadmin_user_manager'
 ```
 Then run `ansible-galaxy install -r requirements.yml -p roles`  
-
-
-Or clone this repository:  
-`git@github.com:diffy0712/ansible-role-sysadmin-user-manager.git`
+ - __Using git:__
+`git clone git@github.com:diffy0712/ansible-role-sysadmin-user-manager.git`
 
 ### Define required variables
 
