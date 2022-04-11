@@ -1,6 +1,6 @@
 ---
 sysadmin_user: ansible
-sysadmin_password: example
+sysadmin_password: "{{ 'example'|password_hash('sha512','somesalt') }}"
 sysadmin_shell: '/bin/bash'
 sysadmin_issudoer: yes
 sysadmin_keys: 

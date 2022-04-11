@@ -80,7 +80,7 @@ Using [roles](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse
     - sysadmin_keys: 
         - yourpublickey
   roles:
-      - role: diffy0712.sysadmin-user-manager
+      - role: diffy0712.sysadmin_user_manager
 ```
 
 Using [include_role](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html#including-roles-dynamic-reuse)
@@ -88,7 +88,7 @@ Using [include_role](https://docs.ansible.com/ansible/latest/user_guide/playbook
 ---
 - hosts: all
   vars:
-    - sysadmin_password: example
+    - sysadmin_password: "{{ 'example'|password_hash('sha512','somesalt') }}"
     - sysadmin_keys: 
         - yourpublickey
   tasks:
@@ -98,7 +98,7 @@ Using [include_role](https://docs.ansible.com/ansible/latest/user_guide/playbook
 
     - name: Include sysadmin-user-manager role
       include_role:
-        name: diffy0712.sysadmin-user-manager
+        name: diffy0712.sysadmin_user_manager
 
 ```
 
@@ -109,7 +109,7 @@ Using [include_role](https://docs.ansible.com/ansible/latest/user_guide/playbook
 - hosts: all
   vars:
     - sysadmin_user: ansible
-    - sysadmin_password: example
+    - sysadmin_password: "{{ 'example'|password_hash('sha512','somesalt') }}"
     - sysadmin_shell: '/bin/bash'
     - sysadmin_issudoer: yes
     - sysadmin_keys: 
@@ -120,5 +120,5 @@ Using [include_role](https://docs.ansible.com/ansible/latest/user_guide/playbook
         - file: ./files/test.txt
           dest: /home/ansible/test.txt
   roles:
-      - role: diffy0712.sysadmin-user-manager
+      - role: diffy0712.sysadmin_user_manager
 ```
